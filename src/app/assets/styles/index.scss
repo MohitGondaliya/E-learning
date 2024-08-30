@@ -1,0 +1,3946 @@
+@import "./controls";
+@import "./reset";
+
+html,
+body {
+  font-family: "Nunito", sans-serif !important;
+  min-width: 375px;
+}
+
+// Logo
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+
+  img {
+    display: block;
+  }
+}
+
+// Text Primary
+.text-primary {
+  color: $Primary;
+}
+
+// Link
+.link {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  padding: 2px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    left: 50%;
+    right: 50%;
+    bottom: 2px;
+    height: 1px;
+    z-index: 0;
+    transition: all 150ms ease-in-out;
+    transition-delay: 50ms;
+  }
+
+  &:hover::before {
+    left: 0;
+    right: 0;
+  }
+}
+
+// Link Primary
+.link.link-primary {
+  color: $Primary50;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $Primary60;
+  }
+
+  &::before {
+    background: $Primary60;
+  }
+}
+
+// Link Light
+.link.link-light {
+  color: $LightText;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $DarkText;
+  }
+
+  &::before {
+    background: $DarkText;
+  }
+}
+
+// Img Fluid
+.img-fluid {
+  display: block;
+  max-width: 100%;
+}
+
+// Component Wrap
+.component-wrap {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px dashed #9747FF;
+  background: $White;
+}
+
+// login wrapper
+.login-wrapper {
+  min-height: 100vh;
+  background: #2E0B88;
+  padding: 24px;
+  overflow: hidden;
+
+  .logo {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -16px;
+  }
+
+  .left-block {
+    position: relative;
+    min-height: calc(100vh - 108px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -64px;
+      left: -30px;
+      width: 488px;
+      height: 488px;
+      z-index: 0;
+      background: url('./../images/register-top-left-blur.png') no-repeat center center;
+      mix-blend-mode: color;
+      background-size: contain;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      margin-top: -400px;
+      right: -20%;
+      width: 605px;
+      height: 605px;
+      z-index: 0;
+      background: url('./../images/register-bottom-right-blur.png') no-repeat center center;
+      mix-blend-mode: color;
+      background-size: contain;
+    }
+
+  }
+
+  .login-form {
+    padding: 40px;
+    border-radius: 24px;
+    background: $White;
+    margin: 0 16px 16px auto;
+    max-width: 505px;
+    min-width: 505px;
+
+    .head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      .MuiTypography-h4 {
+        font-size: 32px;
+      }
+    }
+
+    .back-label {
+      display: flex;
+      align-items: center;
+    }
+
+    .or-separator {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 30px 0 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 50%;
+        height: 1px;
+        z-index: 0;
+        background: linear-gradient(270deg, #DBE2E7 0%, rgba(219, 226, 231, 0) 100%);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 0;
+        height: 1px;
+        z-index: 0;
+        background: linear-gradient(-270deg, #DBE2E7 0%, rgba(219, 226, 231, 0) 100%);
+      }
+
+      >span {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 16px;
+        font-family: $fontFamily;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 2px 12px;
+        margin-top: -10px;
+        background: $White;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .half-filled.MuiToggleButtonGroup-root {
+      .MuiButtonBase-root {
+        display: block;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+// login swiper
+.login-swiper.swiper {
+  position: relative;
+  border-radius: 24px;
+  max-width: -webkit-fill-available;
+  margin: -92px auto 16px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.24);
+    // filter: blur(12px);
+    backdrop-filter: blur(5px);
+  }
+
+  .swiper-wrapper {
+    .login-swiper-slide.swiper-slide {
+      padding: 24px;
+
+      .MuiChip-root {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    position: absolute;
+    top: 36px;
+    right: 45px;
+    left: auto;
+    width: 70px !important;
+    opacity: 1 !important;
+    background: rgba(255, 255, 255, 0.24);
+
+    .swiper-scrollbar-drag {
+      background: $White;
+    }
+
+  }
+
+  .swiper-pagination-fraction {
+    position: absolute;
+    top: 27px;
+    left: auto;
+    right: 24px;
+    bottom: auto;
+    width: 112px;
+    color: $White;
+    color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    >span {
+      display: inline-block;
+      color: $White;
+    }
+  }
+}
+
+// wrapper
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: $White;
+
+  .main-content {
+    position: relative;
+    padding-top: 94px;
+    margin-left: 240px;
+    transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+    .content-wrapper {
+      background: $GreyBackground;
+      padding: 30px 30px 10px;
+      border-radius: 48px 0 0 0;
+      min-height: calc(100vh - 164px);
+      max-height: calc(100vh - 164px);
+      overflow: auto;
+
+      .page-title {
+        display: none;
+      }
+    }
+  }
+}
+
+// Overlayer
+.mat-overlayer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba($color: $Black, $alpha: 0.52);
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+  .scroller-wrap {
+    >div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .sidebar-head {
+    padding: 27.5px 40px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-body {
+    flex-grow: 1;
+
+    .main-navigation {
+      margin: 0 16px;
+    }
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 32px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.15px;
+    margin-bottom: 10px;
+    color: $DarkText;
+    transition: all 200ms ease-in-out;
+
+    .nav-icon {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+
+      .MuiAvatar-root {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        transition: all 200ms ease-in-out;
+        transform-origin: top left;
+
+        &.default {
+          transform: scale(1) translate(-50%, -50%);
+        }
+
+        &.active {
+          transform: scale(0) translate(-50%, -50%);
+        }
+      }
+
+    }
+
+
+    &.active,
+    &.active:hover {
+      background: $Primary;
+      color: $White;
+
+      .nav-icon {
+        .MuiAvatar-root {
+          &.default {
+            transform: scale(0) translate(-50%, -50%);
+          }
+
+          &.active {
+            transform: scale(1) translate(-50%, -50%);
+          }
+        }
+
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background: $Primary;
+      color: $White;
+
+      .nav-icon {
+        .MuiAvatar-root {
+          &.default {
+            transform: scale(0) translate(-50%, -50%);
+          }
+
+          &.active {
+            transform: scale(1) translate(-50%, -50%);
+          }
+        }
+
+      }
+    }
+  }
+
+  .sidebar-footer {
+    flex-shrink: 0;
+    margin: 0 16px;
+    padding: 16px 0;
+    border-top: 1px solid rgba($color: #B3C3CC, $alpha: 0.56);
+
+    .nav-item {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// Header
+.header {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  background: $White;
+  padding: 23px 30px;
+  min-width: 375px;
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+  .profile-btn {
+    margin: -10px;
+
+    &.MuiIconButton {
+      .MuiAvatar-root {
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+      }
+    }
+
+    .logged-username {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0.15px;
+      color: $DarkText;
+      max-width: 160px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .page-title {
+    margin: -8px 0px;
+
+    .MuiTypography-root {
+      margin-top: -4px;
+      text-transform: capitalize;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: -4px;
+      color: $Primary;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      transition: all 200ms ease-in-out;
+
+      .MuiAvatar-root {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+      }
+
+      &:hover {
+        color: $Primary30;
+      }
+    }
+  }
+
+  &.track-header {
+    left: 0;
+
+    .logo-wrapper {
+      padding-right: 30px;
+      margin-right: 42px;
+      border-right: 1px solid rgba($color: #B3C3CC, $alpha: 0.56);
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: $GreyBackground;
+  text-align: center;
+  padding: 20px 15px 30px;
+}
+
+// Full Height Card
+.full-height-card.MuiCard-root {
+  min-height: calc(100vh - 204px);
+}
+
+// Notification Item
+.notification {
+  display: flex;
+  border-bottom: 1px solid rgba(179, 195, 204, 0.56);
+  padding: 20px 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .left {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 0 0%;
+
+    .notification-icon {
+      margin-right: 16px;
+      padding: 8px;
+      border-radius: 50%;
+      background: $Primary5;
+    }
+
+    .detail {
+      .detail-list {
+        margin-top: 1px;
+
+        li {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+
+          &:not(:first-child)::before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 4px;
+            height: 4px;
+            margin: 0 8px;
+            background: $GreyText;
+            border-radius: 50%;
+          }
+
+          .MuiAvatar-root {
+            margin-right: 4px;
+          }
+
+          .MuiTypography-root {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .action {
+    margin-left: 24px;
+    flex-shrink: 0;
+
+    .MuiButton-root {
+      min-width: 140px;
+    }
+  }
+}
+
+// Determined ircular progress
+.determined-circular-progress {
+  position: relative;
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid $Primary5;
+  box-sizing: content-box;
+
+  
+}
+
+// Badge Card
+.badge-card {
+  text-align: center;
+
+  .MuiCardContent-root {
+    padding: 20px 24px;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: rgba(237, 230, 243, 1);
+
+    .MuiAvatar-root {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .name {
+    margin-bottom: 4px;
+  }
+
+  .description {
+    margin-bottom: 16px;
+
+    .MuiTypography-root {
+      display: inline;
+    }
+
+    .more-link {
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      font-weight: 700;
+      color: $Primary;
+    }
+  }
+
+  .chip.MuiChip-root {
+    padding: 2px 0;
+
+    .MuiChip-label {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      padding: 0 10px;
+      color: $White;
+    }
+  }
+
+  .progress-status {
+    margin-top: -10px;
+  }
+}
+
+// Progress 
+.progress-status {
+  &.MuiTypography-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+
+    .determined-circular-progress {
+      margin-left: 8px;
+    }
+  }
+}
+
+// Load More
+.load-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 17px;
+  background: $White;
+  border-radius: 32px;
+  box-shadow: 0px 2px 8px 0px rgba(149, 157, 165, 0.16);
+
+  .MuiCircularProgress-root {
+    margin-right: 8px;
+  }
+}
+
+// Profile Page Wrapper
+.profile-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  .profile-left {
+    flex-basis: 297px;
+    min-width: 297px;
+    position: sticky;
+    top: 0;
+  }
+
+  .profile-right {
+    flex-grow: 1;
+  }
+}
+
+// Profile Card
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .top {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .bottom {
+    padding: 0 20px 24px;
+    background: $White;
+    border-radius: 0 0 24px 24px;
+
+    .user-avatar.MuiAvatar-root {
+      border: 2px solid $White;
+      width: 100px;
+      height: 100px;
+      margin: -50px auto 12px;
+      object-fit: cover;
+    }
+
+    .profile-view-handle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+
+      >.MuiTypography-root {
+        margin: 0 4px;
+      }
+    }
+
+    .MuiTypography-root {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+// Action Title
+.action-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+// Badge Listing
+.badge-listing {
+  li {
+    display: block;
+
+    .MuiTypography-root {
+      padding: 4px 14px 4px 4px;
+      border: 1px solid #CDD6DB;
+      border-radius: 32px;
+      display: inline-flex;
+      align-items: center;
+
+      i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 7px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: rgba(237, 230, 243, 1);
+
+        .MuiAvatar-root {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    +li {
+      margin-top: 10px;
+    }
+  }
+}
+
+// User Detail Listing
+.user-detail-listing {
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    .detail-icon {
+      flex-shrink: 0;
+      padding: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: rgba(237, 230, 243, 1);
+
+      .MuiAvatar-root {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .left-block {
+      display: flex;
+      align-items: center;
+    }
+
+    .action-block {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}
+
+// Verify OTP Dialog
+.verify-otp-dialog {
+  text-align: center;
+
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px;
+    background: $Primary5;
+    padding: 18px;
+    margin: 0 auto 16px;
+
+    .MuiAvatar-root {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// OTP Input
+.otp-input {
+  margin: -8px;
+
+  >div {
+    justify-content: center;
+
+    input {
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 500;
+      color: $Primary;
+      width: 56px !important;
+      height: 56px;
+      padding: 8px;
+      border-radius: 8px;
+      margin: 8px;
+      border: 1px solid $LightBorder;
+      transition: all 200ms ease-in-out;
+
+      &:focus {
+        border-color: $Primary;
+      }
+    }
+  }
+}
+
+// Timer
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .MuiTypography-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0.5px;
+    margin-left: -1px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+  }
+}
+
+// Save Payment Card
+.save-payment-card {
+  position: relative;
+  text-align: center;
+  padding: 12px 0;
+
+  .MuiIconButton {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 15px;
+    background: $GreyBackground;
+    margin: 0 auto 12px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+// Add New Card
+.add-new-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .MuiCardContent-root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 15px;
+      background: $Primary5;
+      margin: 0 auto 12px;
+      width: 60px;
+      height: 60px;
+
+      &:hover,
+      &:focus {
+        background: $Primary10;
+      }
+    }
+  }
+}
+
+.MuiTabPanel-root {
+  .full-height-card {
+    min-height: calc(100vh - 272px);
+  }
+}
+
+// VideoCall Layout
+.videocall-wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  min-width: 375px;
+
+  .video-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+    &.open {
+      padding-right: 360px;
+
+      .video-screen {
+        margin: 0 0 0 20px;
+        width: calc(100% - 20px);
+      }
+    }
+
+    .video-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 17px 30px;
+
+      .logo-wrapper {
+        padding-right: 30px;
+        margin-right: 30px;
+        border-right: 1px solid rgba(179, 195, 204, 0.56)
+      }
+    }
+
+    .video-screen {
+      position: relative;
+      min-height: 550px;
+      margin: 0 20px;
+      width: calc(100% - 40px);
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 24px;
+
+      .floating-widnow {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 300px;
+        height: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 12px;
+        border: 1px solid $White;
+        box-shadow: 0px 13px 27px -5px #32325D40, 0px 8px 16px -8px #0000004D;
+
+        .invitee-mic {
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          padding: 6px;
+          border-radius: 50%;
+          background: $Primary;
+          z-index: 1;
+
+          .MuiAvatar-root {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .video-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 30px;
+
+      .videocall-timer {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 6px 12px;
+        border-radius: 24px;
+        background: $Primary5;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  .chat-wrapper {
+    flex-basis: 360px;
+    flex-shrink: 0;
+  }
+
+}
+
+// Chat
+.chat-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  z-index: 1;
+  width: 360px;
+  margin-right: -360px;
+  background: $White;
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    flex-shrink: 0;
+
+    .MuiIconButton {
+      margin-right: -8px;
+    }
+  }
+
+  .chat-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0 0 24px;
+
+    .scroller-wrap {
+      >div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    ul {
+      margin-top: auto;
+      margin-right: 24px;
+      width: calc(100% - 24px);
+
+      li {
+        max-width: 75%;
+
+        .message {
+          display: inline-block;
+          text-align: left;
+          padding: 10px 16px;
+        }
+
+        &.sender {
+          margin-left: auto;
+          text-align: right;
+
+          .message {
+            background: $Primary;
+            border-radius: 12px 0 12px 12px;
+          }
+
+          .message-info {
+            text-align: right;
+          }
+        }
+
+        &.receiver {
+          margin-right: auto;
+
+          .message {
+            background: $Primary5;
+            border-radius: 0 12px 12px 12px;
+          }
+        }
+
+        &+li {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+
+  .chat-footer {
+    padding: 24px;
+    flex-shrink: 0;
+  }
+
+  &.open {
+    margin-right: 0;
+  }
+}
+
+// Full course card
+.full-course-card {
+  .MuiCardContent-root {
+    padding: 16px;
+
+    &:last-child {
+      padding: 16px;
+    }
+
+    .course-core {
+      display: flex;
+      align-items: flex-start;
+
+      .cover {
+        flex-shrink: 0;
+        max-width: 100%;
+        margin-right: 16px;
+        position: relative;
+        width: 160px;
+        height: 149px;
+        min-height: 140px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+          transform-origin: center;
+        }
+      }
+
+      &:hover {
+        .cover {
+          >img {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .main-detail {
+        flex-grow: 1;
+
+        .badges {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 8px;
+
+          .chip.MuiChip-root {
+            padding: 2px 0;
+            margin-right: 10px;
+
+            .MuiChip-label {
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 700;
+              padding: 0 10px;
+              color: $White;
+            }
+          }
+
+          .course-access {
+            color: $Success;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+          }
+        }
+
+        .link-primary:has(.course-name) {
+
+          &:hover,
+          &:focus {
+            &::before {
+              display: none;
+            }
+
+            .course-name {
+              color: $Primary;
+            }
+          }
+        }
+
+        .mirco-feature {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          flex-wrap: wrap;
+
+          li {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin: 4px 8px 4px 0;
+
+            &:not(:first-child)::before {
+              content: "";
+              position: relative;
+              display: inline-block;
+              vertical-align: middle;
+              width: 4px;
+              height: 4px;
+              margin-right: 8px;
+              background: $GreyText;
+              border-radius: 50%;
+            }
+
+            .rating-wrapper {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              padding: 5px 6px;
+              border-radius: 6px;
+              background: $GreyBackground;
+              margin-right: 6px;
+            }
+
+            .course-owner {
+              display: inline-flex;
+              align-items: center;
+
+              .MuiAvatar-root {
+                border-radius: 50%;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .time-slot {
+      display: flex;
+      align-items: center;
+
+      .MuiAvatar-root {
+        margin-top: -2px;
+        margin-right: 4px;
+      }
+    }
+
+    .next-course-card {
+      display: block;
+      padding: 16px;
+      border-radius: 8px;
+      background: $GreyBackground;
+      text-decoration: none;
+      overflow: hidden;
+
+      .next-title {
+        display: block;
+        text-transform: uppercase;
+        color: $LightText;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .btn-action.MuiButton-root {
+        padding: 8px;
+        margin-top: 9px;
+        margin-left: -8px;
+        margin-bottom: -4px;
+
+        .MuiButton-startIcon {
+          margin-right: 4px;
+        }
+      }
+
+      .determined-linear-progress {
+        margin: -16px;
+        text-align: right;
+
+        .MuiTypography-root {
+          margin-bottom: 6px;
+          margin-right: 8px;
+        }
+
+        .MuiLinearProgress-root {
+          height: 6px;
+        }
+      }
+    }
+  }
+}
+
+// Course card
+.course-card {
+  display: flex;
+  flex-direction: column;
+
+  .MuiCardContent-root {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &:last-child {
+      padding: 16px;
+    }
+
+    .cover {
+      position: relative;
+      height: auto;
+      padding-bottom: 52.05%;
+      max-height: 140px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        transform-origin: center;
+      }
+
+      .chip.MuiChip-root {
+        padding: 2px 0;
+
+        &.floating-badge {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+
+        .MuiChip-label {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+          padding: 0 10px;
+          color: $White;
+        }
+      }
+
+      .btn-favourite.MuiButton-root {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+        background: rgba($color: $Black, $alpha: 0.32);
+
+        &.active {
+          background: rgba($color: $White, $alpha: 1);
+        }
+      }
+
+    }
+
+    &:hover {
+      .cover {
+        >img {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      .details {
+        margin-right: 12px;
+
+        .course-access {
+          display: block;
+          color: $Success;
+          font-weight: 800;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        }
+
+        .course-name {
+          font-weight: 700;
+          margin-bottom: 2px;
+        }
+
+        .course-owner {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .link-primary:has(.course-name) {
+
+        &:hover,
+        &:focus {
+          &::before {
+            display: none;
+          }
+
+          .course-name {
+            color: $Primary;
+          }
+        }
+      }
+
+      .highlights {
+        flex-shrink: 0;
+        flex-basis: auto;
+        text-align: right;
+
+        .pricing.MuiTypography-root {
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+
+        .rating-box {
+          border-radius: 8px;
+          border: 1px solid rgba(179, 195, 204, 0.56);
+          overflow: hidden;
+          flex-shrink: 0;
+          flex-basis: auto;
+
+          .rating-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-bottom: 1px solid rgba(179, 195, 204, 0.56);
+            background: $GreyBackground;
+          }
+
+          .rating-count {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6px 5px;
+            line-height: 14px;
+            letter-spacing: 0.2px;
+          }
+        }
+      }
+
+    }
+
+    .time-slot {
+      display: flex;
+      align-items: center;
+
+      .MuiAvatar-root {
+        margin-top: -2px;
+        margin-right: 4px;
+      }
+    }
+
+    .mirco-feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+
+      li {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        margin: 4px 8px 4px 0;
+
+        &:not(:first-child)::before {
+          content: "";
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          width: 4px;
+          height: 4px;
+          margin-right: 8px;
+          background: $GreyText;
+          border-radius: 50%;
+        }
+
+        .rating-wrapper {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 6px;
+          border-radius: 6px;
+          background: $GreyBackground;
+          margin-right: 6px;
+        }
+
+        .course-owner {
+          display: inline-flex;
+          align-items: center;
+
+          .MuiAvatar-root {
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  &.completed-card {
+    .MuiCardContent-root {
+      .cover {
+        .btn-favourite.MuiButton-root {
+          display: none;
+        }
+      }
+
+      .main {
+        .highlights {
+          .pricing.MuiTypography-root {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// Card Slider
+.card-slider-wrapper {
+  position: relative;
+
+  .card-slider-title {
+    margin-bottom: -32px;
+    position: relative;
+    z-index: 2;
+    padding-right: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .swiper-navigation-prev,
+  .swiper-navigation-next {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 8px);
+    background: $White;
+    border: 1px solid rgba(179, 195, 204, 0.56);
+    transition: opacity 200ms ease-in-out;
+    box-shadow: 0px 2px 8px 0px rgba(149, 157, 165, 0.16) !important;
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+  }
+
+  .swiper-navigation-prev {
+    left: -16px;
+    right: auto;
+  }
+
+  .swiper-navigation-next {
+    right: -16px;
+    left: auto;
+  }
+
+  .swiper {
+    padding: 44px 0 12px;
+
+    .swiper-wrapper {
+      .course-card-slide {
+        height: auto;
+      }
+    }
+
+    .swiper-scrollbar {
+      position: absolute;
+      top: 13px;
+      right: 21px;
+      left: auto;
+      width: 70px !important;
+      opacity: 1 !important;
+      background: rgba(179, 195, 204, 0.56);
+
+      .swiper-scrollbar-drag {
+        background: $Primary;
+      }
+
+    }
+
+    .swiper-pagination-fraction {
+      position: absolute;
+      top: 5px;
+      left: auto;
+      right: 0;
+      bottom: auto;
+      width: 112px;
+      color: $Primary;
+      color: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .swiper-pagination-current {
+        color: $DarkText
+      }
+
+      >span {
+        display: inline-block;
+        color: $LightText;
+        font-weight: 800;
+      }
+    }
+  }
+
+}
+
+// Interest Slider
+.interest-slider {
+  display: flex;
+  align-items: center;
+
+  .swiper {
+    margin-left: 0;
+
+    .swiper-wrapper {
+      .interest-slide {
+        width: auto !important;
+
+        .interest-button.MuiButton-root {
+          background: $White;
+
+          &:hover,
+          &.active {
+            color: $Primary;
+            background: $Primary5;
+            border-color: $Primary15;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-navigation-button {
+    background: $White;
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+}
+
+// Filter Tags
+.filter-tags {
+  margin-bottom: 24px;
+
+  .MuiToggleButtonGroup-grouped {
+    .value {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 700;
+      margin-left: 4px;
+      color: $Primary;
+    }
+
+    .MuiIconButton-root {
+      margin: -5px -11px -5px 3px;
+    }
+
+    &.variant-outlined-primary {
+      background: $White;
+      border: 1px solid $Primary15;
+      color: $Primary;
+      font-weight: 700;
+
+      &:hover {
+        background: $Primary5;
+      }
+    }
+  }
+}
+
+// Vertical Tabs Wrapper
+.vertical-tabs-wrapper {
+  display: flex;
+  align-items: stretch;
+  min-width: 991px;
+
+  .rating-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 532px;
+    margin: 0 auto;
+    min-height: 100%;
+
+    .rating-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 11px;
+
+      .MuiAvatar-root {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  [role="tabpanel"] {
+    flex-grow: 1;
+    padding: 24px;
+    max-width: 792px;
+  }
+}
+
+// Chart Year Selector
+.chart-date-selector {
+  text-align: right;
+
+  .MuiDatepicker {
+    width: 120px;
+
+    &.MuiTextField-root {
+
+      .MuiOutlinedInput-root {
+        .MuiOutlinedInput-input {
+          padding: 7.5px 0 7.5px 16px;
+        }
+
+        .MuiInputAdornment-root {
+          .MuiIconButton-root {
+            .MuiSvgIcon-root {
+              width: 20px;
+              height: 20px;
+              background-size: 20px 20px;
+              background-image: url('./../images/calendar-grey.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Learning Status Legend Title9
+.learning-status-legend {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 23px 24px;
+
+  .status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 16px;
+  }
+
+  &.info {
+    background: rgba($color: $Info, $alpha: 0.1);
+
+    .status-icon {
+      background: $Info;
+    }
+  }
+
+  &.warning {
+    background: rgba($color: $Warning, $alpha: 0.1);
+
+    .status-icon {
+      background: $Warning;
+    }
+  }
+
+  &.success {
+    background: rgba($color: $Success, $alpha: 0.1);
+
+    .status-icon {
+      background: $Success;
+    }
+  }
+}
+
+// Chapter Slider Wrapper
+.today-task-separator {
+  margin: 14px 0;
+  border-color: #D5DEE3 !important;
+}
+
+.chapter-slider-wrapper {
+  .slider-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+    .slider-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-control {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+
+      .swiper-button-disabled {
+        cursor: not-allowed;
+
+        .MuiAvatar-root {
+          opacity: 0.5;
+        }
+      }
+
+      .swiper-pagination-fraction {
+        text-align: right;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+        letter-spacing: 0.1px;
+        vertical-align: baseline;
+        color: #B1B8BD;
+        padding-top: 6px;
+        padding-right: 2px;
+
+        .swiper-pagination-current {
+          font-size: 14px;
+          line-height: 16px;
+          color: #001D2D;
+          margin-right: -2px;
+        }
+
+        span:not(.swiper-pagination-current) {
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+
+  .chapter-card-slide {
+    .determined-linear-progress {
+      text-align: right;
+      margin-top: -20px;
+
+      .MuiLinearProgress-root {
+        height: 6px;
+        border-radius: 8px;
+      }
+
+      .MuiTypography-root {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// Error Wrapper
+.error-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+
+  .lottie-block {
+    max-width: 440px;
+    height: auto;
+  }
+}
+
+// Cart Layout
+.cart-layout {
+  min-height: calc(100vh - 204px);
+  background: $White;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .cart-main {
+    flex-grow: 1;
+  }
+
+  .cart-footer {
+    border-top: 1px solid #D5DEE3;
+    flex-shrink: 0;
+    padding: 24px;
+  }
+}
+
+// Cart card
+.cart-item {
+  position: relative;
+  padding: 24px;
+
+  &+.cart-item {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      border-top: 1px solid #D5DEE3;
+    }
+  }
+
+  .cart-item-core {
+    display: flex;
+    align-items: flex-start;
+
+    .cover {
+      flex-shrink: 0;
+      max-width: 100%;
+      margin-right: 16px;
+      position: relative;
+      width: 96px;
+      height: 96px;
+      min-height: 96px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        transform-origin: center;
+      }
+    }
+
+    &:hover {
+      .cover {
+        >img {
+          transform: scale(1.2);
+        }
+      }
+
+      .main-detail {
+        .cartItem-name {
+          color: $Primary;
+        }
+      }
+    }
+
+    .main-detail {
+      flex-grow: 1;
+
+      .badges {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+        .chip.MuiChip-root {
+          padding: 2px 0;
+          margin-right: 10px;
+
+          .MuiChip-label {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+            padding: 0 10px;
+            color: $White;
+          }
+        }
+
+        .course-access {
+          color: $Success;
+          font-weight: 800;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+        }
+      }
+
+      .cartItem-name {
+        transition: all 200ms ease-in-out;
+      }
+
+      .mirco-feature {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        li {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          margin: 4px 8px 4px 0;
+
+          &:not(:first-child)::before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 4px;
+            height: 4px;
+            margin-right: 8px;
+            background: $GreyText;
+            border-radius: 50%;
+          }
+
+          .rating-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 6px;
+            border-radius: 6px;
+            background: $GreyBackground;
+            margin-right: 6px;
+          }
+
+          .course-owner {
+            display: inline-flex;
+            align-items: center;
+
+            .MuiAvatar-root {
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .time-slot {
+    display: flex;
+    align-items: center;
+
+    .MuiAvatar-root {
+      margin-top: -2px;
+      margin-right: 4px;
+    }
+  }
+
+  &.small-item {
+    padding: 16px 0;
+
+    &+.cart-item {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #D5DEE3;
+      }
+    }
+
+    .cart-item-core {
+      .cover {
+        margin-right: 18px;
+        width: 76px;
+        height: 76px;
+        min-height: 76px;
+        margin-bottom: 0;
+      }
+
+      .main-detail {
+        .badges {
+          margin-bottom: 6px;
+
+          .course-access {
+            letter-spacing: 0.4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Error Wrapper
+.empty-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+
+  .lottie {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+// Checkout Stepper
+.checkout-stepper {
+  .stepper-head {
+    .MuiStepper-horizontal {
+      display: flex;
+      justify-content: space-between;
+
+      .MuiStep-root {
+        flex-grow: 1;
+        flex-shrink: 0;
+        width: 25%;
+        padding: 0;
+
+        .MuiStepLabel-root {
+          padding: 20px 24px;
+
+          .MuiStepLabel-iconContainer {
+            display: none;
+          }
+
+          .MuiStepLabel-labelContainer {
+            .MuiStepLabel-label {
+
+              &.Mui-active,
+              &.Mui-completed {
+                .MuiTypography-root {
+                  color: $Primary;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .MuiStepConnector-root {
+        display: none;
+      }
+    }
+
+    .MuiMobileStepper-root {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      border-radius: 0;
+
+      .MuiLinearProgress-root {
+        width: inherit;
+        height: 6px;
+
+        .MuiLinearProgress-bar {
+          margin-left: 24px;
+        }
+
+        &[aria-valuenow="100"] {
+          .MuiLinearProgress-bar {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .stepper-body {
+    padding: 40px;
+  }
+}
+
+// Stepper Radio Card 
+.radio-card.MuiFormControlLabel-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #D5DEE3;
+  border-radius: 16px;
+  min-width: 136px;
+  min-height: 100%;
+  padding: 26px 24px 24px;
+  margin: 0;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+
+  &.min-h-136p {
+    min-height: 136px;
+  }
+
+  &.max-w-full {
+    max-width: 100%;
+  }
+
+  &:hover {
+    border-color: $Primary;
+  }
+
+  &:has(.MuiRadio-root.Mui-checked) {
+    border-color: $Primary;
+  }
+
+  .MuiRadio-root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+  }
+
+  &.enrollment-radio {
+    align-items: flex-start;
+    text-align: left;
+    padding: 6px 16px;
+    border-radius: 11px;
+    overflow: hidden;
+
+    .MuiTypography-root {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:has(.MuiRadio-root.Mui-checked)::after {
+      border-color: $Primary;
+    }
+
+    .MuiRadio-root {
+      z-index: 1;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition: all 200ms ease-in-out;
+    }
+  }
+}
+
+hr.light-hr {
+  border-color: #D5DEE3 !important;
+}
+
+// Payment Summary
+.payment-summary {
+  padding: 20px 24px;
+  background: #F1F4F6;
+  border-radius: 24px;
+  min-height: 100%;
+}
+
+// Apply Coupon
+.apply-coupon {
+  margin: 0 -24px 24px;
+  width: calc(100% + 48px);
+  min-height: 56px;
+  background: $Primary5;
+
+  .MuiButtonBase-root.full-button {
+    width: 100%;
+    border-radius: 0;
+    min-height: 56px;
+  }
+
+  &.applied {
+    padding: 16px 24px;
+  }
+}
+
+// Sub Total
+.sub-total {
+  border-bottom: 2px dashed #D0DAE0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.coupon-lottie {
+  width: 40px;
+  height: 40px;
+}
+
+.success-lottie {
+  width: 100px;
+  height: 100px;
+}
+
+// Course Details Page Banner
+.course-banner {
+  .course-cover {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    padding-bottom: 34.17%;
+
+    >img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .chip.MuiChip-root {
+      padding: 2px 0;
+
+      &.floating-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+      }
+
+      .MuiChip-label {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        padding: 0 10px;
+        color: $White;
+      }
+    }
+
+    .top-action {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-left: 20px;
+
+      .MuiButton-root {
+        background: rgba($color: $Black, $alpha: 0.32);
+      }
+    }
+  }
+
+  .course-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    gap: 20px;
+
+
+    .course-all-feature {
+      flex-grow: 1;
+
+      .course-instructors {
+        padding: 20px 0;
+        border-top: 1px solid #D5DEE3;
+
+        ul {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 8px 20px 0 0;
+            margin-right: 20px;
+            padding-right: 20px;
+
+            &::after {
+              content: "";
+              position: relative;
+              border-right: 1px solid #D5DEE3;
+              height: 20px;
+              right: -20px;
+            }
+
+            &:last-child {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .course-owner {
+          display: inline-flex;
+          align-items: center;
+
+          .MuiAvatar-root {
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 8px;
+          }
+        }
+      }
+
+      .course-feature {
+        display: flex;
+        align-items: center;
+        padding: 16px 24px;
+
+        .image-wrapper {
+          padding: 8px;
+          border-radius: 50%;
+          background: rgba($color: $Primary50, $alpha: 0.08);
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .rating-box {
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(179, 195, 204, 0.56);
+      overflow: hidden;
+      flex-basis: auto;
+      min-width: 74px;
+
+      .rating-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 9px;
+        border-bottom: 1px solid rgba(179, 195, 204, 0.56);
+        background: $GreyBackground;
+      }
+
+      .rating-count {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4px 9px 3px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+      }
+    }
+  }
+}
+
+// Check List
+.check-list {
+  li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      flex-shrink: 0;
+      background: url('./../images/check-rounded-primary.svg') no-repeat center center;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    &+li {
+      margin-top: 11px;
+    }
+  }
+}
+
+// Course Details Page
+.course-details-page {
+  .sticy-right {
+    position: sticky;
+    top: 0;
+  }
+}
+
+// Course Content Accordion
+.course-content-accordion {
+  &.MuiAccordion-root {
+    border-radius: 0 !important;
+    box-shadow: none;
+  }
+
+  .course-content-listing {
+    >li {
+      border-top: 1px solid #D5DEE3;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 14px 0 14px 32px;
+        text-decoration: none !important;
+
+        &:hover {
+          .MuiTypography-root {
+            color: $Primary;
+          }
+        }
+
+        .listing-detail {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          >.MuiTypography-root {
+            margin-right: 10px;
+            flex-grow: 1;
+          }
+        }
+      }
+
+    }
+  }
+
+  .mirco-feature {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+
+    li {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin: 4px 8px 4px 0;
+      white-space: nowrap;
+
+      &:not(:first-child)::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        margin-right: 8px;
+        flex-shrink: 0;
+        background: $GreyText;
+        border-radius: 50%;
+      }
+
+      .rating-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 6px;
+        border-radius: 6px;
+        background: $GreyBackground;
+        margin-right: 6px;
+      }
+
+      .course-owner {
+        display: inline-flex;
+        align-items: center;
+
+        .MuiAvatar-root {
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Subscription Plans
+.subscription-plans {
+  border-radius: 24px;
+  margin-top: 8px;
+  padding: 40px 20px;
+  background: $Primary url('./../images/subscription-bg.svg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+
+  // Subscription Toggle Group
+  .subscription-toggle-group.MuiToggleButtonGroup-root {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .MuiToggleButton-root {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      margin: 6px;
+      border-radius: 12px !important;
+      min-width: 160px;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.8);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      transition: all 200ms ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.24);
+        backdrop-filter: blur(5px);
+        transition: all 200ms ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        transition: all 200ms ease-in-out;
+        border-radius: 12px;
+        border: 2px solid transparent;
+      }
+
+      .title {
+        text-transform: capitalize;
+      }
+
+      .MuiTypography-root {
+        position: relative;
+        z-index: 1;
+      }
+
+      &.Mui-selected,
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      &.Mui-selected::after {
+        border-color: #FFFFFF;
+      }
+    }
+  }
+}
+
+// Rating Block
+.rating-block {
+  display: flex;
+  align-items: stretch;
+  background: #F1F4F6;
+  border-radius: 12px;
+
+  .average-ratings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 25px 40px;
+    min-width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid #D5DEE3;
+  }
+
+  .percentage-progress-ratings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    gap: 60px;
+    max-width: 680px;
+    margin: 0 auto;
+
+    .progress {
+      display: flex;
+      flex-direction: column;
+
+      .determined-circular-progress {
+        width: 58px;
+        height: 58px;
+        border: 6px solid #EDE6F3;
+        margin-bottom: 12px;
+
+        .circle {
+          margin: -6px;
+
+          &+.MuiBox-root {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .flex-line {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 700;
+              letter-spacing: 0.1px;
+
+              .MuiAvatar-root {
+                position: relative;
+                top: -2px;
+                width: 16px;
+                height: 16px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+
+      .each-total {
+        font-weight: 700;
+
+        span {
+          display: block;
+          font-weight: 400;
+          color: $LightText;
+        }
+      }
+    }
+  }
+}
+
+// Review Block
+.review-block {
+  padding: 20px 0 0;
+
+  .btn-sorting.MuiButton-root {
+    padding: 5px 10px 5px 14px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    min-width: 175px;
+
+    .sorting-value {
+      font-weight: 700;
+      color: $Primary;
+      margin-left: 4px;
+    }
+  }
+
+  .review-listing {
+    margin-top: 12px;
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid #D5DEE3;
+      }
+
+      .reviewer-avatar.MuiAvatar-root {
+        margin-top: 6px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .details {
+        flex-grow: 1;
+
+        .detail-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 8px;
+        }
+
+        .detail-body {
+          .MuiTypography-root+.MuiTypography-root {
+            margin-top: 12px;
+          }
+        }
+
+        .reply-box {
+          margin-top: 8px;
+        }
+      }
+
+      .user-reaction {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .mirco-feature {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin: 4px 8px 4px 0;
+
+      &:not(:first-child)::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        margin-right: 8px;
+        background: $GreyText;
+        border-radius: 50%;
+      }
+
+      .rating-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 6px;
+        border-radius: 6px;
+        background: $GreyBackground;
+        margin-right: 6px;
+      }
+
+      .course-owner {
+        display: inline-flex;
+        align-items: center;
+
+        .MuiAvatar-root {
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Sorting Menu Paper
+.sorting-menu.MuiMenu-root {
+  .MuiMenu-paper {
+    min-width: 175px;
+  }
+}
+
+
+/* Responsive Media Queries
+---------------------------------------------------------------------------------------------------------------------- */
+@media(max-width: 1536px) {
+  .rating-block {
+    flex-direction: column;
+
+    .average-ratings {
+      align-items: center;
+      border-right: 0;
+      border-bottom: 1px solid #D5DEE3;
+    }
+  }
+
+  .course-banner {
+    .course-highlight {
+      .rating-box {
+        display: flex;
+        justify-content: flex-start;
+        margin: 16px 24px;
+
+        .rating-wrapper {
+          border-bottom: 0;
+          border-right: 1px solid rgba(179, 195, 204, 0.56);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1440px) {
+  .login-wrapper {
+    .login-form {
+      min-width: auto;
+    }
+  }
+
+  .rating-block {
+    flex-direction: column;
+
+    .average-ratings {
+      padding: 24px;
+    }
+
+    .percentage-progress-ratings {
+      padding: 24px;
+      gap: 30px;
+    }
+  }
+
+}
+
+@media(max-width: 1200px) {
+  .login-wrapper {
+    .logo {
+      margin-bottom: 20px;
+    }
+
+    .login-form {
+      padding: 24px;
+      margin: -16px 16px 16px auto;
+    }
+
+    .left-block {
+      padding: 80px 0;
+
+      &::before {
+        top: -84px;
+        width: 288px;
+        height: 288px;
+      }
+
+      >img {
+        max-width: 450px;
+      }
+    }
+  }
+
+  .login-swiper.swiper {
+    margin-top: -70px;
+
+    .swiper-wrapper {
+      .login-swiper-slide.swiper-slide {
+        padding: 20px;
+
+        .MuiTypography-h4 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    margin-left: -350px;
+    width: 270px;
+    background: $White;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 10px -5px,
+      rgba(0, 0, 0, 0.14) 0px 16px 24px 2px,
+      rgba(0, 0, 0, 0.12) 0px 6px 30px 5px;
+
+    .sidebar-head {
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    &.open {
+      margin-left: 0;
+    }
+  }
+
+  .header {
+    left: 0;
+    padding: 15px 20px 15px 10px;
+
+    .profile-btn.MuiIconButton {
+      padding: 6px;
+      margin: -6px;
+
+      .MuiAvatar-root {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .page-title {
+      display: none;
+    }
+
+  }
+
+  .wrapper {
+    .main-content {
+      margin-left: 0;
+      padding-top: 78px;
+
+      .content-wrapper {
+        padding: 20px 20px 10px;
+        border-radius: 16px 16px 0 0;
+        min-height: calc(100vh - 133px);
+        max-height: none;
+        overflow: visible;
+
+        .page-title {
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      &.open {
+        .header {
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 15px 15px 20px;
+  }
+
+  .full-height-card {
+    min-height: calc(100vh - 215px);
+  }
+
+  .vertical-tabs-wrapper {
+    min-width: 820px;
+
+    [role="tabpanel"] {
+      padding: 16px;
+      max-width: 620px;
+    }
+  }
+
+  .error-wrapper {
+    padding: 30px;
+  }
+
+  .cart-layout {
+    min-height: calc(100vh - 163px);
+  }
+
+  .checkout-stepper {
+    .stepper-body {
+      padding: 24px;
+    }
+  }
+
+  .payment-summary {
+    padding: 20px;
+  }
+
+  .apply-coupon {
+    margin: 0 -20px 20px;
+    width: calc(100% + 40px);
+
+    &.applied {
+      padding: 16px 20px;
+    }
+  }
+
+  .rating-block {
+    flex-direction: row;
+
+    .average-ratings {
+      border-bottom: 0;
+      border-right: 1px solid #D5DEE3;
+      align-items: flex-start;
+    }
+
+    .percentage-progress-ratings {
+      padding: 24px 40px;
+    }
+
+  }
+
+  .course-banner {
+    .course-cover {
+      margin-bottom: 12px;
+    }
+
+    .course-highlight {
+      padding: 0 16px;
+
+      .course-all-feature {
+        .course-feature {
+          padding: 12px;
+        }
+      }
+
+      .rating-box {
+        margin: 12px;
+      }
+    }
+  }
+
+}
+
+@media(max-width: 900px) {
+  .login-wrapper {
+    .left-block {
+      padding: 20px 0 0;
+      min-height: auto;
+
+      >img {
+        position: absolute;
+        top: 50px;
+        right: -40px;
+        left: auto;
+        opacity: 0.6;
+      }
+
+      &::before {
+        position: fixed;
+      }
+
+      &::after {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+        margin-top: -200px;
+        transform: rotate(180deg);
+      }
+    }
+
+    .login-form {
+      position: relative;
+      z-index: 1;
+      margin: 20px auto 0;
+
+      .head {
+        .MuiTypography-h4 {
+          font-size: 24px;
+        }
+      }
+
+    }
+  }
+
+  .login-swiper.swiper {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .header {
+    .profile-btn {
+      &.MuiIconButton {
+        .MuiAvatar-root {
+          margin-right: 0;
+        }
+      }
+
+      .logged-username {
+        display: none;
+      }
+    }
+  }
+
+  .sidebar {
+    background: $White;
+  }
+
+  .wrapper {
+    .main-content {
+      .content-wrapper {
+        padding: 20px 16px 10px;
+        min-height: calc(100vh - 124px);
+      }
+    }
+  }
+
+  .full-height-card {
+    min-height: calc(100vh - 200px);
+  }
+
+  .footer {
+    padding: 10px 10px 16px;
+  }
+
+  .notification {
+    padding: 16px 0;
+  }
+
+  .profile-wrapper {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+
+    .profile-left {
+      position: static;
+    }
+  }
+
+  .videocall-wrapper {
+    .video-window {
+      .video-header {
+        padding: 13.5px 16px;
+
+        .logo-wrapper {
+          padding-right: 20px;
+          margin-right: 20px;
+        }
+      }
+
+      .video-screen {
+        border-radius: 16px;
+        margin: 0 12px;
+        width: calc(100% - 24px);
+        min-height: auto;
+
+        .floating-widnow {
+          width: 246px;
+          height: 148px;
+        }
+      }
+
+      .video-footer {
+        padding: 12px 16px;
+      }
+
+      &.open {
+        padding-right: 0;
+
+        .video-screen {
+          margin: 0 12px;
+          width: calc(100% - 24px);
+        }
+      }
+    }
+  }
+
+  .chat-wrapper {
+    flex-basis: 100%;
+    width: 100%;
+    margin-right: -100%;
+
+    .chat-header {
+      padding: 12px 20px;
+    }
+
+    .chat-body {
+      padding: 12px 0 0 16px;
+    }
+
+    .chat-footer {
+      padding: 16px;
+    }
+  }
+
+  .full-course-card,
+  .course-card {
+    .MuiCardContent-root {
+      padding: 12px;
+
+      &:last-child {
+        padding: 12px;
+      }
+    }
+  }
+
+  .vertical-tabs-wrapper {
+    display: block;
+    min-width: auto;
+
+    .MuiTabs-root {
+      .MuiButtonBase-root {
+        .MuiSvgIcon-root {
+          width: 26px;
+          height: 26px;
+          color: $Primary;
+        }
+
+        &.Mui-disabled {
+          opacity: 0.25;
+        }
+      }
+    }
+
+    [role="tabpanel"] {
+      max-width: 100%;
+      min-height: 230px;
+
+    }
+
+    .rating-filter {
+      margin: 35px auto;
+      max-width: 320px;
+    }
+  }
+
+  .error-wrapper {
+    padding: 16px;
+  }
+
+  .cart-item {
+    padding: 16px;
+
+    &+.cart-item {
+      &::before {
+        left: 16px;
+        right: 16px;
+      }
+    }
+
+  }
+
+  .cart-layout {
+    min-height: calc(100vh - 154px);
+
+    .cart-footer {
+      padding: 16px;
+    }
+  }
+
+  .checkout-stepper {
+    .stepper-head {
+      .MuiStepper-horizontal {
+        .MuiStep-root {
+          width: 100%;
+
+          &.Mui-completed {
+            display: none;
+          }
+
+          .MuiStepLabel-root {
+            padding: 16px 20px 10px;
+
+            &.Mui-disabled {
+              display: none;
+            }
+          }
+        }
+
+      }
+
+      .MuiMobileStepper-root {
+        .MuiLinearProgress-root {
+          height: 3px;
+
+          .MuiLinearProgress-bar {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    .stepper-body {
+      padding: 24px 16px;
+    }
+  }
+
+  .cart-item {
+    .cart-item-core {
+      .cover {
+        width: 76px;
+        height: 76px;
+        min-height: 76px;
+      }
+    }
+  }
+
+  .success-lottie {
+    width: 76px;
+    height: 76px;
+  }
+
+  .rating-block {
+    flex-direction: column;
+
+    .average-ratings {
+      padding: 20px;
+      align-items: center;
+      border-right: 0;
+      border-bottom: 1px solid #D5DEE3;
+
+      .MuiTypography-h3 {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+
+    .percentage-progress-ratings {
+      padding: 24px 20px 20px;
+      max-width: 100%;
+    }
+  }
+
+  .course-content-accordion {
+    &.MuiAccordion-root {
+      .MuiAccordionSummary-root {
+        .MuiAccordionSummary-content {
+          .title-data {
+            display: block;
+            flex-grow: 1;
+            margin-right: 8px;
+
+            .mirco-feature {
+              margin-top: 4px;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+
+      .MuiAccordionDetails-root {
+        .course-content-listing {
+          >li a {
+            padding: 10px 0 10px 35px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media(max-width: 600px) {
+  .login-wrapper {
+    padding: 16px;
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    .left-block {
+      &::after {
+        margin-top: -90px;
+        width: 400px;
+        height: 400px;
+      }
+    }
+
+    .login-form {
+      padding: 24px 20px;
+      position: relative;
+      z-index: 1;
+      margin: 20px auto 0;
+
+
+      .or-separator {
+        margin: 20px 0 12px;
+      }
+
+      .half-filled.MuiToggleButtonGroup-root {
+        .MuiButtonBase-root {
+          min-width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+  }
+
+  .login-swiper.swiper {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .header {
+    padding: 9px 12px 9px 8px;
+
+    .profile-btn {
+      &.MuiIconButton {
+        .MuiAvatar-root {
+          width: 42px;
+          height: 42px;
+        }
+      }
+    }
+  }
+
+  .search-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $White;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: -200px;
+    transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+    &.open {
+      margin-top: 0;
+    }
+  }
+
+  .wrapper {
+    .main-content {
+      padding-top: 66px;
+
+      .content-wrapper {
+        .page-title {
+          margin-bottom: 18px;
+        }
+      }
+    }
+  }
+
+  .notification {
+    display: block;
+
+    .left {
+      .notification-icon {
+        margin-right: 8px;
+      }
+    }
+
+    .action {
+      margin-left: 48px;
+      margin-top: 12px;
+    }
+  }
+
+  .videocall-wrapper {
+    .video-window {
+      .video-header {
+        padding: 7.5px 16px;
+      }
+
+      .video-screen {
+        .floating-widnow {
+          top: 16px;
+          right: 16px;
+          width: 180px;
+          height: 108px;
+
+          .invitee-mic {
+            bottom: 8px;
+            right: 8px;
+          }
+        }
+      }
+
+      .video-footer {
+        .videocall-timer {
+          position: absolute;
+          bottom: 72px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          background: rgba($color: $Primary5, $alpha: 0.48);
+        }
+      }
+    }
+  }
+
+  .full-course-card {
+    .MuiCardContent-root {
+      .course-core {
+        flex-direction: column;
+
+        .cover {
+          margin-bottom: 16px;
+          width: 100%;
+          padding-bottom: 40%;
+        }
+      }
+    }
+  }
+
+  .course-card {
+    .MuiCardContent-root {
+      .cover {
+        padding-bottom: 40%;
+      }
+    }
+  }
+
+  .learning-status-legend {
+    padding: 18px;
+    min-height: 100%;
+
+    .status-icon {
+      padding: 8px;
+      margin-right: 10px;
+    }
+  }
+
+  .card-slider-wrapper {
+    .card-slider-title {
+      margin-bottom: 0;
+      padding-right: 0;
+    }
+
+    .swiper {
+      padding: 12px 0 40px;
+
+      .swiper-scrollbar {
+        top: auto;
+        bottom: 9px;
+        left: auto;
+        right: calc(50% - 34px);
+      }
+
+      .swiper-pagination-fraction {
+        bottom: 0px;
+        right: calc(50% - 56px);
+        left: auto;
+        top: auto;
+      }
+    }
+
+  }
+
+  .vertical-tabs-wrapper {
+    .rating-filter {
+      max-width: 280px;
+    }
+  }
+
+  .cart-item {
+    .cart-item-core {
+      flex-wrap: wrap;
+
+      .cover {
+        width: 76px;
+        height: 76px;
+        min-height: 76px;
+      }
+
+      .mobile-pricing {
+        max-width: calc(100% - 68px);
+      }
+
+      .main-detail {
+        min-width: 100%;
+        margin-top: 6px;
+
+        .mirco-feature {
+          margin-bottom: -4px;
+        }
+      }
+    }
+  }
+
+  .error-wrapper {
+    .lottie-block {
+      max-width: 300px;
+    }
+  }
+
+  .verify-otp-dialog {
+    .icon {
+      padding: 12px;
+    }
+  }
+
+  .apply-coupon {
+    min-height: 48px;
+    margin: 0 -16px 20px;
+    width: calc(100% + 32px);
+
+    .MuiButtonBase-root.full-button {
+      min-height: 48px;
+    }
+
+    &.applied {
+      padding: 12px 16px;
+    }
+  }
+
+  .cart-item {
+    &.small-item {
+      .cart-item-core {
+        .cover {
+          width: 60px;
+          height: 60px;
+          min-height: 60px;
+          margin-right: 12px;
+          margin-bottom: 10px;
+        }
+
+        .mobile-pricing {
+          max-width: calc(100% - 56px);
+        }
+      }
+    }
+  }
+
+  .payment-summary {
+    border-radius: 16px;
+    padding: 20px 16px;
+  }
+
+  .rating-block {
+    .average-ratings {
+      padding: 20px;
+      min-width: auto;
+      align-items: stretch;
+    }
+
+    .percentage-progress-ratings {
+      flex-direction: column;
+      padding: 20px;
+      gap: 12px;
+      align-items: stretch;
+      width: 100%;
+
+      .progress {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .each-total {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          width: 60px;
+          text-align: left;
+        }
+
+        .determined-linear-progress {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          margin-right: 10px;
+
+          .flex-line {
+            display: flex;
+            align-items: center;
+          }
+
+          .MuiLinearProgress-root {
+            flex-grow: 1;
+            width: 100%;
+            margin-top: 4px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .course-banner {
+    .course-cover {
+      padding-bottom: 44%;
+      margin-bottom: 6px;
+    }
+
+    .course-highlight {
+      padding: 0 12px;
+
+      .course-all-feature {
+        .course-feature {
+          padding: 12px 8px;
+
+          .image-wrapper {
+            padding: 4px;
+
+            .MuiAvatar-root {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+
+        .course-instructors {
+          padding: 16px 0;
+          margin-top: 8px;
+
+          ul {
+            display: block;
+
+            li::after {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .rating-box {
+        margin: 12px 8px;
+      }
+    }
+  }
+
+  .subscription-plans {
+    .subscription-toggle-group.MuiToggleButtonGroup-root {
+      max-width: 300px;
+
+      .MuiToggleButton-root {
+        flex-grow: 1;
+        min-width: 100%;
+      }
+    }
+  }
+
+  .review-block {
+    .review-listing {
+      margin-top: 20px;
+
+      .list-item {
+        flex-direction: column;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+
+        .reviewer-mobile-head {
+          width: 100%;
+
+          .reviewer-avatar.MuiAvatar-root {
+            margin-top: 0;
+          }
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .details {
+          .detail-head {
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .course-content-accordion {
+    &.MuiAccordion-root {
+      .MuiAccordionDetails-root {
+        .course-content-listing {
+          >li a {
+            padding: 10px 0 10px 12px;
+
+            .listing-detail {
+              .MuiTypography-root {
+                overflow: hidden;
+                max-width: 100%;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

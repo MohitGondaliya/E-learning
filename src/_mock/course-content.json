@@ -1,0 +1,164 @@
+[
+    {
+        "id": "panel1",
+        "title": "Introduction to Web Development",
+        "totalDuration": "2.5 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "1 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "1 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Document",
+                "duration": "30 Min"
+            }
+        ]
+    },
+    {
+        "id": "panel2",
+        "title": "Front-End Development with React.js",
+        "totalDuration": "7.5 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Document",
+                "duration": "1.5 Hrs"
+            }
+        ]
+    },
+    {
+        "id": "panel3",
+        "title": "Back-End Development with Node.js and Express.js",
+        "totalDuration": "7 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Document",
+                "duration": "1 Hrs"
+            }
+        ]
+    },
+    {
+        "id": "panel4",
+        "title": "Database Management with MongoDB",
+        "totalDuration": "6.5 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Document",
+                "duration": "2 Hrs"
+            }
+        ]
+    },
+    {
+        "id": "panel5",
+        "title": "User Authentication and Authorization",
+        "totalDuration": "6.5 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Video",
+                "duration": "1.5 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Document",
+                "duration": "2 Hrs"
+            }
+        ]
+    },
+    {
+        "id": "panel6",
+        "title": "Deployment and Hosting",
+        "totalDuration": "7.5 Hrs",
+        "chapters": [
+            {
+                "title": "Understanding the Basics",
+                "type": "Video",
+                "duration": "2 Hrs"
+            },
+            {
+                "title": "Setting Up Development Environment",
+                "type": "Video",
+                "duration": "2 Hrs"
+            },
+            {
+                "title": "Fundamentals of Web Development",
+                "type": "Video",
+                "duration": "2 Hrs"
+            },
+            {
+                "title": "Lorem ipsume dollar dtessr text",
+                "type": "Document",
+                "duration": "1.5 Hrs"
+            }
+        ]
+    }
+]

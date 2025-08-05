@@ -1,0 +1,124 @@
+@use "./variable" as *;
+
+// form-group
+.form-group {
+    display: block;
+    width: 100%;
+
+    .MuiFormControl-root {
+        width: 100%,
+    }
+
+    >.MuiInputLabel-root {
+        display: block;
+        font-family: $fontFamily;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: $DarkText;
+        margin-bottom: 8px;
+
+        .required {
+            font-family: $fontFamily;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.10px;
+            color: $Danger;
+        }
+
+        .optional {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.10px;
+            color: $LightText;
+        }
+    }
+}
+
+// React Text Editor
+.text-editor {
+    .rsw-editor {
+        border: 1px solid #B3C3CC8F;
+        min-height: 162px;
+        border-radius: 16px;
+
+        .rsw-toolbar {
+            background: #F1F4F6;
+            border-bottom: 1px solid #B3C3CC8F;
+            border-radius: 15px 15px 0 0;
+            min-height: 52px;
+            padding: 6px 8px;
+            gap: 2px;
+
+            .rsw-btn {
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                font-size: 0;
+                line-height: 0;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 24px;
+                transition: all 200ms ease-in-out;
+
+                &:hover,
+                &:focus {
+                    background-color: rgba(75, 0, 130, 0.1);
+                }
+
+                &[title="Bold"] {
+                    background-image: url('./../images/rt-bold.svg');
+                }
+
+                &[title="Italic"] {
+                    background-image: url('./../images/rt-italic.svg');
+                }
+
+                &[title="Link"] {
+                    background-image: url('./../images/rt-link.svg');
+                }
+
+                &[title="HTML mode"] {
+                    background-image: url('./../images/rt-code.svg');
+                }
+            }
+        }
+
+        .rsw-ce {
+            padding: 16px 22px;
+            color: #444444;
+            border-radius: 0 0 15px 15px;
+        }
+    }
+
+    b {
+        font-weight: 700 !important;
+    }
+
+    i {
+        font-style: italic !important;
+    }
+
+    // Link
+    a {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 700;
+        letter-spacing: 0.1px;
+        padding: 2px 0;
+        transition: all 0.2s ease-in-out;
+        color: $Primary50;
+        cursor: pointer;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $Primary60;
+        }
+    }
+
+}

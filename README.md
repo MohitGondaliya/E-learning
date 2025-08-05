@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# 📘 E-Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-learning platform built with **React 19**, **Vite**, and **MUI 7.1.0**. It provides a seamless learning experience for both mentors and learners with interactive scheduling, Google Calendar integration, and dynamic UI components.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [Click to view the live app](https://web2.anasource.com/design/mohit/e-learning/home)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧩 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 🎓 **Mentor & Learner Schedules**  
+  Interactive schedule cards built with Swiper.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 📅 **Google Calendar Integration**  
+  Automatic reminders before your learning sessions.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🧭 **Fully Responsive Design**  
+  Optimized for desktop, tablet, and mobile using MUI breakpoints.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- ⚡ **Vite for Development**  
+  Fast refresh, lightning builds, and module hot reload.
+
+- 🎨 **Custom Theming**  
+  MUI's theme API used for consistent design and branding.
+
+- 🧱 **Reusable Component Architecture**  
+  Modular code structure for scalability and reuse.
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech | Description |
+|------|-------------|
+| [React 19](https://react.dev/) | JavaScript library for UI |
+| [Vite](https://vitejs.dev/) | Build tool for modern web |
+| [MUI 7.1.0](https://mui.com/) | Material UI component library |
+| [SwiperJS](https://swiperjs.com/react) | Slider for schedule components |
+| [React Router](https://reactrouter.com/) | Client-side routing |
+| [Day.js](https://day.js.org/) | Lightweight date library |
+
+---
+
+## 📁 Project Structure
+
+src/
+├── assets/ # Images and static files
+├── components/ # Reusable React components
+├── layouts/ # Layout wrappers
+├── pages/ # Route-based pages
+├── theme/ # MUI theme configuration
+├── hooks/ # Custom React hooks
+├── utils/ # Utility functions
+└── main.tsx # App entry point
+
+
+---
+
+## 🚧 Installation & Development
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/e-learning.git
+cd e-learning
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview

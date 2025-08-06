@@ -1494,12 +1494,12 @@ LearningTheme = createTheme(LearningTheme, {
                             backgroundSize: "20px 20px",
                         },
                         '&.Mui-checked': {
-                            '& .MuiSvgIcon-root[data-testid="RadioButtonUncheckedIcon"]': {
+                            '& .MuiSvgIcon-root::first-of-type': {
                                 transform: 'scale(0)',
                                 width: 20,
                                 height: 20,
                             },
-                            '& .MuiSvgIcon-root[data-testid="RadioButtonCheckedIcon"]': {
+                            '& .MuiSvgIcon-root::last-of-type': {
                                 transform: 'scale(1)',
                                 width: 20,
                                 height: 20,
@@ -1523,10 +1523,10 @@ LearningTheme = createTheme(LearningTheme, {
                             },
                         },
                         '&.Mui-checked': {
-                            '& .MuiSvgIcon-root[data-testid="RadioButtonUncheckedIcon"]': {
+                            '& .MuiSvgIcon-root::first-of-type': {
                                 transform: 'scale(0)',
                             },
-                            '& .MuiSvgIcon-root[data-testid="RadioButtonCheckedIcon"]': {
+                            '& .MuiSvgIcon-root::last-of-type': {
                                 backgroundColor: 'transparent',
                                 backgroundImage: `url("${images.CheckedRadio}")`,
                                 backgroundRepeat: "no-repeat",
